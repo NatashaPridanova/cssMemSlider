@@ -3,9 +3,70 @@ body {
 }
 
 .container {
+    margin: 0 auto;
     width: 90%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.meme-scroller {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 10%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.meme-group {
+    border: 3px solid lime;
+}
+
+img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.3rem;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-right: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-circle {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.changing-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+    border: 3px solid blue;
+    justify-content: center;
+}
+
+p {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.img-wrapper {
+    width: 100%;
+}
+
+.meme-group:nth-child(1)~.input-area>*:nth-child(1) {
+    background-color: red;
+    border: 3px solid black;
 }
