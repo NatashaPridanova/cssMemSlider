@@ -64,6 +64,7 @@ p {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
+    margin-bottom: 1rem;
 }
 
 .text-content {
@@ -179,4 +180,23 @@ input {
 
 #slide4:checked~.meme-scroller .bullets label:nth-child(4) {
     opacity: 4;
+}
+
+@media (max-width: 425px) {
+    .text-content-wrapper {
+        order: 1;
+        width: 12rem;
+    }
+    .bullets {
+        margin: 1rem auto;
+    }
+    .img-content {
+        margin-bottom: 0;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
 }
