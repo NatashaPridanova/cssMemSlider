@@ -18,6 +18,7 @@ body {
     grid-auto-columns: 100%;
     gap: 10%;
     overflow-x: hidden;
+    transition: all 0.5s;
 }
 
 .meme-group {
@@ -111,20 +112,27 @@ input {
     display: none;
 }
 
-.bullets label {
-    display: inline-block;
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 100%;
-    background: #000000;
-    margin: 0 0.3rem;
+label {
+    display: flex;
+    width: 1.75rem;
+    height: 1.75rem;
     cursor: pointer;
     text-decoration: none;
     opacity: 0.5;
 }
 
-.bullets label:hover {
-    opacity: 1;
+span {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 100%;
+    background: #000066;
+    margin: auto;
+    box-shadow: 0.1rem 0 0.1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.bullets label:hover span {
+    border: 0.1rem solid #7F7FB2;
 }
 
 .bullets {
@@ -171,15 +179,15 @@ input {
 }
 
 #slide2:checked~.meme-scroller .bullets label:nth-child(2) {
-    opacity: 2;
+    opacity: 1;
 }
 
 #slide3:checked~.meme-scroller .bullets label:nth-child(3) {
-    opacity: 3;
+    opacity: 1;
 }
 
 #slide4:checked~.meme-scroller .bullets label:nth-child(4) {
-    opacity: 4;
+    opacity: 1;
 }
 
 @media (max-width: 425px) {
