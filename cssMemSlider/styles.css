@@ -5,7 +5,7 @@ body {
 .container {
     margin: 0 auto;
     width: 90%;
-    max-width: 1000px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,16 +18,16 @@ body {
     grid-auto-columns: 100%;
     gap: 10%;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 .meme-group {
-    border: 3px solid lime;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 img {
     width: 100%;
-    aspect-ratio: 16/9;
+    max-width: 40rem;
     object-fit: cover;
     border-radius: 0.3rem;
 }
@@ -35,9 +35,11 @@ img {
 .input-area {
     display: flex;
     gap: 10px;
+    margin-left: auto;
     margin-right: 2rem;
     align-items: center;
     justify-content: center;
+    width: 20rem;
 }
 
 .input-circle {
@@ -48,16 +50,8 @@ img {
     opacity: 0.5;
 }
 
-.changing-content {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 1 100%;
-    border: 3px solid blue;
-    justify-content: center;
-}
-
 p {
+    padding-left: 1.5rem;
     margin-left: 0;
     margin-right: auto;
 }
@@ -66,7 +60,123 @@ p {
     width: 100%;
 }
 
-.meme-group:nth-child(1)~.input-area>*:nth-child(1) {
-    background-color: red;
-    border: 3px solid black;
+.img-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+}
+
+.text-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+}
+
+.img-content-wrapper,
+.text-content-wrapper {
+    overflow-x: hidden;
+}
+
+.text-content-wrapper {
+    width: 20rem;
+}
+
+.text-content {
+    width: 100%;
+    margin-left: -100%;
+    transition: margin-left 700ms cubic-bezier(0.28, 0.57, 0.67, 0.47);
+}
+
+.img-content {
+    width: 100%;
+    margin-left: -100%;
+    transition: margin-left 700ms cubic-bezier(0.28, 0.57, 0.67, 0.47);
+}
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+input {
+    display: none;
+}
+
+.bullets label {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 100%;
+    background: #000000;
+    margin: 0 0.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+.bullets label:hover {
+    opacity: 1;
+}
+
+.bullets {
+    display: flex;
+    margin-left: auto;
+    margin-right: 2rem;
+    align-items: center;
+}
+
+#slide1:checked~.meme-scroller .img-content {
+    margin-left: 0;
+}
+
+#slide2:checked~.meme-scroller .img-content {
+    margin-left: -100%;
+}
+
+#slide3:checked~.meme-scroller .img-content {
+    margin-left: -200%;
+}
+
+#slide4:checked~.meme-scroller .img-content {
+    margin-left: -300%;
+}
+
+#slide1:checked~.meme-scroller .text-content {
+    margin-left: 0;
+}
+
+#slide2:checked~.meme-scroller .text-content {
+    margin-left: -100%;
+}
+
+#slide3:checked~.meme-scroller .text-content {
+    margin-left: -200%;
+}
+
+#slide4:checked~.meme-scroller .text-content {
+    margin-left: -300%;
+}
+
+#slide1:checked~.meme-scroller .bullets label:nth-child(1) {
+    opacity: 1;
+}
+
+#slide2:checked~.meme-scroller .bullets label:nth-child(2) {
+    opacity: 2;
+}
+
+#slide3:checked~.meme-scroller .bullets label:nth-child(3) {
+    opacity: 3;
+}
+
+#slide4:checked~.meme-scroller .bullets label:nth-child(4) {
+    opacity: 4;
 }
