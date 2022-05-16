@@ -33,28 +33,10 @@ img {
     border-radius: 0.3rem;
 }
 
-.input-area {
-    display: flex;
-    gap: 0.625rem;
-    margin-left: auto;
-    margin-right: 2rem;
-    align-items: center;
-    justify-content: center;
-    width: 20rem;
-}
-
-.input-circle {
-    width: 0.625rem;
-    height: 0.625rem;
-    background-color: black;
-    border-radius: 50%;
-    opacity: 0.5;
-}
-
 p {
     padding-left: 1.5rem;
-    margin-left: 0;
-    margin-right: auto;
+    margin: 0;
+    overflow: hidden;
 }
 
 .img-wrapper {
@@ -65,7 +47,6 @@ p {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
-    margin-bottom: 1rem;
 }
 
 .text-content {
@@ -81,6 +62,10 @@ p {
 
 .text-content-wrapper {
     width: 20rem;
+}
+
+.img-content-wrapper {
+    margin-bottom: 1rem;
 }
 
 .text-content {
@@ -138,8 +123,8 @@ span {
 .bullets {
     display: flex;
     margin-left: auto;
-    margin-right: 2rem;
-    align-items: center;
+    margin-right: 1%;
+    align-items: flex-start;
 }
 
 #slide1:checked~.meme-scroller .img-content {
@@ -190,13 +175,19 @@ span {
     opacity: 1;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
     .text-content-wrapper {
-        order: 1;
-        width: 12rem;
+        width: 20rem;
     }
     .bullets {
         margin: 1rem auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .text-content-wrapper {
+        order: 1;
+        width: 70%;
     }
     .img-content {
         margin-bottom: 0;
